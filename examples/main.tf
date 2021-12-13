@@ -48,3 +48,11 @@ resource "aws_security_group" "allow_sample" {
     Name = "allow_sample"
   }
 }
+
+terraform {
+  backend "s3" {
+    bucket = "terraform-b60"
+    key    = "example/sample/terraform.tfstate"
+    region = "us-east-1"
+  }
+}
