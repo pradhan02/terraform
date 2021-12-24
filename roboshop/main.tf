@@ -5,7 +5,7 @@ resource "aws_spot_instance_request" "cheap_worker" {
   vpc_security_group_ids = ["sg-06ec2f14a6137cc44"]
   wait_for_fulfillment = true
   tags = {
-    Name = element(var.components,count.index)
+    Name = element(var.components, count.index)
   }
 }
 
