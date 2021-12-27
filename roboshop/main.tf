@@ -19,7 +19,7 @@ resource "aws_ec2_tag" "tags" {
 resource "aws_route53_record" "records" {
   count   = length(var.components)
   zone_id = "Z025991117KJKQB4PF332"
-  name    = "${element(var.components, count.index)}.roboshop.internal"
+  name    = "${element(var.components, count.index)}-dev.roboshop.internal"
   type    = "A"
   ttl     = "300"
   records = [element(aws_spot_instance_request.cheap_worker.*.private_ip, count.index)]
